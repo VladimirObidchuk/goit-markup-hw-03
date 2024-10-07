@@ -1,11 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   font-family: "Roboto", sans-serif;
   background-color: #fff;
   color: #434455;
+  margin: 0 auto;
 }
-.wrapper,
-.nav-list {
-  list-style-type: none;
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1158px;
+  margin: 0 156px;
+  padding: 24px 0;
+  align-items: center;
+}
+.footer .container {
+  padding: 100px 0;
+}
+.header-nav {
+  width: calc((100% - 672px) / 2);
+  display: flex;
+  flex-direction: row;
+  gap: 76px;
+  align-items: center;
+}
+.link {
+  text-decoration: none;
 }
 .header-logo {
   font-family: "Raleway", sans-serif;
@@ -20,44 +47,62 @@ body {
 .link-header {
   color: #2e2f42;
 }
-.header-link {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.16667;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-.nav-item {
-  font-weight: 500;
-  text-decoration: none;
+.item {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  list-style-type: none;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+.nav-item {
+  font-weight: 500;
   color: #2e2f42;
+  padding-right: 40px;
 }
-.nav-item:hover {
+.nav-item:last-child {
+  padding-right: 0;
+}
+.link:hover {
   color: #404bbf;
 }
-.nav-item:focus {
+.link:focus {
   color: #404bbf;
 }
-.nav-item:active {
+.nav-link:active {
   color: #404bbf;
 }
 .header-contact {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
   color: #434455;
   font-style: normal;
+}
+.contact-item:not(:last-child) {
+  padding-right: 40px;
 }
 .header-contact:hover,
 .header-contact:focus {
   color: #404bbf;
 }
+main {
+  flex-grow: 1;
+}
+
 .main-page {
   background-color: #2e2f42;
+  padding: 0;
+  margin: 0;
+}
+.main-page .container {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 188px 242px;
 }
 .main-page-title {
   font-weight: 700;
@@ -67,6 +112,7 @@ body {
   text-align: center;
   color: #fff;
   text-transform: capitalize;
+  margin: 0;
 }
 .main-button {
   font-weight: 500;
@@ -76,10 +122,43 @@ body {
   color: #fff;
   background-color: #4d5ae5;
   cursor: pointer;
+  padding: 16px 32px;
+  border-radius: 4px;
+}
+.button-block {
+  padding-top: 48px;
 }
 .main-button:focus,
 .main-button:hover {
   background-color: #404bbf;
+}
+.description {
+  padding: 0;
+  margin: 0;
+}
+.description .container,
+.team .container,
+.portfolio .container {
+  flex-direction: column;
+  padding: 120px 0;
+}
+.description-title {
+  display: none;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+.card {
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  list-style-type: none;
+}
+.card:not(:last-child) {
+  margin-right: 24px;
 }
 .card-title {
   font-weight: 500;
@@ -98,6 +177,12 @@ body {
 .team {
   background-color: #f4f4fd;
 }
+.team-list {
+  padding-top: 72px;
+}
+.team-image {
+  object-fit: contain;
+}
 .team-title {
   font-weight: 700;
   font-size: 36px;
@@ -106,6 +191,25 @@ body {
   text-align: center;
   color: #2e2f42;
   text-transform: capitalize;
+  margin: 0;
+}
+.team-decription,
+.portfolio-decription {
+  padding: 32px 0;
+}
+.portfolio-decription {
+  padding-left: 8px;
+}
+.team-card-title,
+.team-card-text,
+.portfolio-card-title,
+.portfolio-card-text {
+  margin: 0;
+}
+
+.team-card-text,
+.portfolio-card-text {
+  padding-top: 8px;
 }
 .team-card-title {
   text-align: center;
@@ -119,6 +223,19 @@ body {
 .portfolio {
   background-color: E7E9FC;
 }
+.portfolio-list {
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.portfolio-card {
+  border: 1px solid #e7e9fc;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 48px;
+}
+.portfolio-card:not(:last-child) {
+  margin-right: 0;
+}
 .portfolio-title {
   font-weight: 700;
   font-size: 36px;
@@ -127,12 +244,20 @@ body {
   text-align: center;
   color: #2e2f42;
   text-transform: capitalize;
+  margin: 0;
 }
 .footer {
   background-color: #2e2f42;
 }
+.footer .container {
+  width: 20%;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .footer-text {
+  padding-top: 16px;
   color: #f4f4fd;
+  margin: 0;
 }
 .link-footer {
   color: #f4f4fd;
