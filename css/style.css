@@ -151,9 +151,6 @@ main {
 .portfolio .container {
   flex-direction: column;
 }
-.description-title.visually-hidden {
-  display: none;
-}
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -261,7 +258,7 @@ main {
   align-items: flex-start;
   margin: 0;
 }
-.footer-logo {
+a.footer-logo {
   display: inline-block;
   margin: 0 0 16px 0;
 }
@@ -271,4 +268,16 @@ main {
 }
 .link-footer {
   color: #f4f4fd;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
