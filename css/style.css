@@ -260,16 +260,16 @@ main {
   margin: 0;
 }
 .footer-logo {
-  display: inline-block;
   font-family: "Raleway", sans-serif;
-  text-decoration: none;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  margin: 0 0 16px 0;
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
 }
 .footer-text {
   margin: 0;
